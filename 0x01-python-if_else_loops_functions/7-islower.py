@@ -2,7 +2,7 @@
 
 
 def islower(c):
-    if ord(c) > 123:
+    if ord(c) > 97 and ord(c) < 124:
         return True
     else:
         return False
