@@ -14,7 +14,3 @@ def uppercase(c):
             word += word.join(c)
 
     print("{}".format(word))
-
-
-uppercase("best")
-uppercase("Best School 98 Battery street")
