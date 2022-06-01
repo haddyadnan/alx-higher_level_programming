@@ -3,10 +3,12 @@
 
 def print_last_digit(num):
 
+    exe = 0
     if num < 0:
-        lastd = abs(num) % 10
-        lastd = -1 * lastd
-    else:
-        lastd = num % 10
-    print("{}".format(lastd))
+        num *= -1
+    exe = 1
+    lastd = num % 10
+    if exe == 1:
+        num *= -1
+    print("{:d}".format(lastd), end="")
     return lastd
