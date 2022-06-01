@@ -8,4 +8,5 @@ def print_last_digit(num):
         lastd = -1 * lastd
     else:
         lastd = num % 10
+    print("{}".format(lastd))
     return lastd
