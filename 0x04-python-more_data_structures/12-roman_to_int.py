@@ -13,7 +13,7 @@ def roman_to_int(roman_string):
         roman_list = list(roman_string)
         n = len(roman_list)
         if n < 1:
-            print(roman_list)
+            return roman_list
         else:
             total = 0
             for i in range(n + 1):
@@ -24,6 +24,6 @@ def roman_to_int(roman_string):
                     total += roman_dict[roman_list[i]]
                 else:
                     total -= roman_dict[roman_list[i]]
-            print(total)
+            return total
     else:
         return 0
