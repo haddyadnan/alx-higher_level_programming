@@ -3,4 +3,6 @@
 
 class Square:
 
+    """CLASS SQUARE"""
+
     pass
