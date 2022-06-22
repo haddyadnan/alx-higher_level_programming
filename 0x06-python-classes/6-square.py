@@ -50,7 +50,11 @@ class Square:
         Setter - to set it
         """
 
-        if type(position) != tuple:
+        if (
+            (type(position) != tuple)
+            or ((type(position[0]) != int) or (type(position[1]) != int))
+            or (len(position) != 2)
+        ):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = position
 
