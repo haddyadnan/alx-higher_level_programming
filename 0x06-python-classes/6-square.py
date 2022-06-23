@@ -19,12 +19,15 @@ class Square:
 
     @property
     def size(self):
+        """
+        property instance of class square
+        """
         return self.__size
 
     @size.setter
     def size(self, size):
         """
-        Public Instance method of class square
+        setter Instance of class square
         """
         if type(size) != int:
             raise TypeError("size must be an integer")
@@ -43,20 +46,20 @@ class Square:
         return self.__position
 
     @position.setter
-    def position(self, position):
+    def position(self, value):
 
         """
-        Private instance attribute - position
+        Private instance attribute - value
         Setter - to set it
         """
 
         if (
-            (type(position) != tuple)
-            or ((type(position[0]) != int) or (type(position[1]) != int))
-            or (len(position) != 2)
+            (type(value) != tuple)
+            or (len(value) != 2)
+            or ((type(value[0]) != int) or (type(value[1]) != int) or value[1] < 0)
         ):
             raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = position
+        self.__position = value
 
     def area(self):
         """
@@ -78,3 +81,6 @@ class Square:
         for i in range(self.size):
             print(" " * self.__position[0], end="")
             print("#" * self.__size)
+
+
+my_square = Square(3, (1, -3))
