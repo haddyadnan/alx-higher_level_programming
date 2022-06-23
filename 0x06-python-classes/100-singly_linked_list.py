@@ -53,7 +53,7 @@ class Node:
         private instance: attribute - next node
         setter
         """
-        if not ((value == None) or (type(value) == Node)):
+        if not ((value is None) or (type(value) == Node)):
             raise TypeError("next must be a Node object")
         self.__next_node = value
 
@@ -102,7 +102,7 @@ class SinglyLinkedList:
 
         """sort elements in the linked list"""
 
-        if self.__head == None:
+        if self.__head is None:
             self.__head = Node(value)
         else:
             temp = self.__head
@@ -113,10 +113,10 @@ class SinglyLinkedList:
                 prev = temp
                 temp = temp.next_node
 
-            if temp == None:
+            if temp is None:
                 prev.next_node = Node(value)
 
-            elif (temp == self.__head) and (prev == None):
+            elif (temp == self.__head) and (prev is None):
                 self.__head == Node(value, temp)
             else:
                 new_node = Node(value, temp)
