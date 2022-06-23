@@ -54,7 +54,7 @@ class Node:
         setter
         """
         if not ((value is None) or (type(value) == Node)):
-            raise TypeError("next must be a Node object")
+            raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
 
