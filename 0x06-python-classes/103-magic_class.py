@@ -1,21 +1,29 @@
 #!/usr/bin/python3
 
-import math
+"""
+This module creates a magic class
+    Calculates Circumference and area given radius
+    Area:
+        calculates area
+        self.__radius**2 * math.pi
+    circumference:
+        return 2 * math.pi * self.__radius
+"""
 
-"""This module creates a magic class"""
+import math
 
 
 class MagicClass:
 
     """Class - MagicClass
-    Defines a class
+     Defines a class
+
+    Init instance
+         attr: radius
     """
 
     def __init__(self, radius=0):
 
-        """Init instance
-        attr: radius
-        """
         self.__radius = 0
 
         if type(radius) is not int and type(radius) is not float:
