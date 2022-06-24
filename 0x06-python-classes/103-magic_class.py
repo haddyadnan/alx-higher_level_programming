@@ -2,10 +2,20 @@
 
 import math
 
+"""This module creates a magic class"""
+
 
 class MagicClass:
+
+    """Class - MagicClass
+    Defines a class
+    """
+
     def __init__(self, radius=0):
 
+        """Init instance
+        attr: radius
+        """
         self.__radius = 0
 
         if type(radius) is not int and type(radius) is not float:
@@ -14,6 +24,7 @@ class MagicClass:
 
     @property
     def radius(self):
+
         return self.__radius
 
     def area(self):
