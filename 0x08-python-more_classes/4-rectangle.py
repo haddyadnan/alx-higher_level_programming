@@ -102,4 +102,4 @@ class Rectangle:
         """
         widstr = str(self.__width)
         heistr = str(self.__height)
-        return "Rectangle(" + widstr + "," + heistr + ")"
+        return "Rectangle(" + widstr + ", " + heistr + ")"
