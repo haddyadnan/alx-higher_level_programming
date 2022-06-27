@@ -98,7 +98,7 @@ class Rectangle:
     def __repr__(self) -> str:
 
         """
-        Doc
+        return string representation of the rectangle
         """
         widstr = str(self.__width)
         heistr = str(self.__height)
