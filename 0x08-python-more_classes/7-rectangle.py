@@ -101,9 +101,8 @@ class Rectangle:
 
         hash = ""
         if (self.__width != 0) and (self.__height != 0):
-            hash += "\n".join(
-                str(self.print_symbol) * self.__width for i in range(self.__height)
-            )
+            sym = str(self.print_symbol)
+            hash += "\n".join(sym * self.__width for i in range(self.__height))
         return hash
 
     def __repr__(self) -> str:
