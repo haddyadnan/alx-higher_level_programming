@@ -8,12 +8,17 @@ This module defines a rectangle by height and width
 class Rectangle:
 
     """
-    Instantiating a rectangle class
+    class rectangle
+    Defining the triangle class
     """
 
     number_of_instances = 0
 
     def __init__(self, width=0, height=0) -> None:
+
+        """
+        initialiazing the rectangle class
+        """
 
         self.width = width
         self.height = height
@@ -115,12 +120,3 @@ class Rectangle:
         """
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
-
-
-my_rectangle_1 = Rectangle(2, 4)
-my_rectangle_2 = Rectangle(2, 4)
-print("{:d} instances of Rectangle".format(Rectangle.number_of_instances))
-del my_rectangle_1
-print("{:d} instances of Rectangle".format(Rectangle.number_of_instances))
-del my_rectangle_2
-print("{:d} instances of Rectangle".format(Rectangle.number_of_instances))
