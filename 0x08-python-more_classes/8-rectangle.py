@@ -5,9 +5,6 @@ This module defines a rectangle by height and width
 """
 
 
-from numpy import size
-
-
 class Rectangle:
 
     """
