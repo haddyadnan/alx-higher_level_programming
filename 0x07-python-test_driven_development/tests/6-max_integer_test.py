@@ -20,7 +20,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertTrue(len(doc) > 1)
 
     def test_function_docstring(self):
-        """test funstion docstring"""
+        """test function docstring"""
         doc = max_integer.__doc__
         self.assertTrue(len(doc) > 1)
 
@@ -49,10 +49,10 @@ class TestMaxInteger(unittest.TestCase):
         test = [True, False, True]
         self.assertEqual(max_integer(test), True)
 
-    def test_not_int(self):
-        """test input not int"""
-        test = ["str", "a"]
-        self.assertEqual(max_integer(test), "str")
+    # def test_not_int(self):
+    #     """test input not int"""
+    #     test = ["str", "a"]
+    #     self.assertEqual(max_integer(test), "str")
 
 
 if __name__ == "__main__":
