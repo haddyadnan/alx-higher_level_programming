@@ -49,10 +49,11 @@ class TestMaxInteger(unittest.TestCase):
         test = [True, False, True]
         self.assertEqual(max_integer(test), True)
 
-    # def test_not_int(self):
-    #     """test input not int"""
-    #     test = ["str", "a"]
-    #     self.assertEqual(max_integer(test), "str")
+    def test_not_int(self):
+        """test input not int"""
+        test = ["str", "a"]
+        with self.assertRaises(TypeError):
+            max_integer(test)
 
 
 if __name__ == "__main__":
