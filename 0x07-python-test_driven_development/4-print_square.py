@@ -9,7 +9,9 @@ This module contains a function that prints a square with the character #
 def print_square(size):
 
     """
-    Doct
+    Print square using arg size
+    Return:
+        (string) size x size matrix
     """
 
     if type(size) is not int:
