@@ -39,7 +39,7 @@ def matrix_mul(m_a, m_b):
     for lst in m_b:
         for i in lst:
             if type(i) not in [int, float]:
-                raise TypeError("m_b should contain only integers or floats")
+                raise TypeError("m_b should contain only intergers or floats")
 
     idxa = len(m_a[0])
     idxb = len(m_b[0])
