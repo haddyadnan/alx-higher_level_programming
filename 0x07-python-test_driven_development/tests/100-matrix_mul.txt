@@ -23,3 +23,23 @@ Now use it:
     Traceback (most recent call last):
     ...
     TypeError: m_a should contain only integers or floats
+
+    >>> matrix_mul([[1,"2"], [2,4]], [[]])
+    Traceback (most recent call last):
+    ...
+    ValueError: m_b can't be empty
+
+    >>> matrix_mul([[1,2], [3,4]], [[]])
+    Traceback (most recent call last):
+    ...
+    ValueError: m_b can't be empty
+
+    >>> matrix_mul("matrix_mul", [[]])
+    Traceback (most recent call last):
+    ...
+    TypeError: m_a must be a list
+
+    >>> matrix_mul([[1,2], [3,4]], [["matrix_mul"]])
+    Traceback (most recent call last):
+    ...
+    TypeError: m_b should contain only intergers or floats
