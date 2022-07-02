@@ -19,7 +19,10 @@ def text_indentation(text: str):
     hold = ""
     for txt in text:
         if txt in [".", "?", ":"]:
-            hold += f"{txt}\n\n"
+            hold += f"{txt}\n"
         else:
             hold += hold.join(txt)
-    print(hold.strip("\n"))
+    # print(hold.strip("\n"))
+    # hold = hold.strip("\n")
+    for h in hold:
+        print(h, end="")
