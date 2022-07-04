@@ -22,6 +22,8 @@ Now use it:
 
     >>> my_list.print_sorted()
     [1, 2, 3, 4]
+    >>> print(my_list)
+    [2, 4, 3, 1]
 
     >>> my_list = MyList()
     >>> my_list.append(-2)
@@ -32,6 +34,8 @@ Now use it:
     [-2, -4, -3, -1]
     >>> my_list.print_sorted()
     [-4, -3, -2, -1]
+    >>> print(my_list)
+    [-2, -4, -3, -1]
 
     >>> my_list = MyList()
     >>> my_list.append(0.2)
@@ -58,3 +62,10 @@ Now use it:
     Traceback (most recent call last):
     ...
     TypeError: '<' not supported between instances of 'int' and 'str'
+
+    >>> my_list = MyList()
+    >>> my_list.append(2)
+    >>> print(my_list)
+    [2]
+    >>> my_list.print_sorted()
+    [2]
