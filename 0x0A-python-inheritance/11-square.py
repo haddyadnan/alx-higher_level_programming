@@ -19,7 +19,7 @@ class Square(Rectangle):
         """
         class Square Instantiation
         """
-        Rectangle.__init__(self, size, size)
+        super().__init__(size, size)
 
     def __str__(self) -> str:
 
