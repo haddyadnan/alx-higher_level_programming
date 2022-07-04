@@ -27,9 +27,3 @@ class Square(Rectangle):
         return Square description
         """
         return f"[Square] {str(self.__width__)}/{str(self.__height__)}"
-
-
-s = Square(13)
-
-print(s)
-print(s.area())
