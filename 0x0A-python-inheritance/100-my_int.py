@@ -18,7 +18,7 @@ class MyInt(int):
         Instantiate class
         """
 
-        self.__num__ = value
+        self.num = value
 
     def __eq__(self, other):
 
@@ -26,7 +26,7 @@ class MyInt(int):
         Invert __eq__
         """
 
-        return self.__num__ != other
+        return self.num != other
 
     def __ne__(self, other):
 
@@ -34,4 +34,4 @@ class MyInt(int):
         Invert __ne__
         """
 
-        return self.__num__ == other
+        return self.num == other
