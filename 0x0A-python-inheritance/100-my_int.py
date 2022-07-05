@@ -12,13 +12,13 @@ class MyInt(int):
     Inherits from int
     """
 
-    def __init__(self, num):
+    def __init__(self, value):
 
         """
         Instantiate class
         """
 
-        self.num = num
+        self.__num__ = value
 
     def __eq__(self, other):
 
@@ -26,7 +26,7 @@ class MyInt(int):
         Invert __eq__
         """
 
-        return self.num != other
+        return self.__num__ != other
 
     def __ne__(self, other):
 
@@ -34,4 +34,4 @@ class MyInt(int):
         Invert __ne__
         """
 
-        return self.num == other
+        return self.__num__ == other
