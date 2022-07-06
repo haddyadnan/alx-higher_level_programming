@@ -48,5 +48,3 @@ class Student:
         self.age = json["age"]
         self.first_name = json["first_name"]
         self.last_name = json["last_name"]
-
-        return self.__dict__
