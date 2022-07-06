@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 
 """
-This module appends a string at the end of a text file (UTF8)
-and returms number of characters added
+This module inserts a line of text to a file
+after each line containing a specific string
 """
 
 
 def append_after(filename="", search_string="", new_string=""):
+
     """
     insert new_string after every occurence of new string
     """
