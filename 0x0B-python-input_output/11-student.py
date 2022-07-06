@@ -44,7 +44,16 @@ class Student:
         reload from json
         replaces all attributes of the Student class
         """
+        if json:
+            self.age = json["age"]
+            self.first_name = json["first_name"]
+            self.last_name = json["last_name"]
+        return self
 
-        self.age = json["age"]
-        self.first_name = json["first_name"]
-        self.last_name = json["last_name"]
+
+# j_student_1 = {"first_name": "John", "last_name": "Lot", "age": 45}
+# new_student_1 = Student("Fake", "Fake", 89)
+# new_student_1.reload_from_json(j_student_1)
+# print(new_student_1)
+# print(type(new_student_1))
+# # print("{} {} {}".format(new_student_1.first_name, new_student_1.last_name, new_student_1.age))
