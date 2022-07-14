@@ -123,3 +123,13 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
 
         self.__y = value
+
+    def area(self):
+
+        """
+        Public instance method: area
+        Return: int
+            area of rectangle
+        """
+
+        return self.__width * self.__height
