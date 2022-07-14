@@ -4,6 +4,7 @@
 This module contains the Base class of all other classes in the project
 """
 
+
 class Base:
 
     """
@@ -11,8 +12,9 @@ class Base:
     """
 
     __nb_objects = 0
+
     def __init__(self, id=None) -> None:
-        
+
         """
         init the base class
         """
