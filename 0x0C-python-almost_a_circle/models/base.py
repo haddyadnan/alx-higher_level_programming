@@ -5,7 +5,6 @@ This module contains the Base class of all other classes in the project
 """
 
 
-
 class Base:
 
     """
