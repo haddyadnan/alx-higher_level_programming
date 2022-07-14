@@ -5,6 +5,7 @@ This module contains the Base class of all other classes in the project
 """
 
 
+
 class Base:
 
     """
@@ -19,7 +20,7 @@ class Base:
         init the base class
         """
 
-        if id != None:
+        if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
