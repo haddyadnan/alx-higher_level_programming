@@ -17,8 +17,6 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None) -> None:
         super().__init__(size, size, x, y, id)
 
-        self.width = self.height = self.size = size
-
     @property
     def size(self):
 
@@ -52,14 +50,23 @@ class Square(Rectangle):
             for key, value in kwargs.items():
                 if key == "id":
                     self.__dict__[key] = value
+                elif key == "size":
+                    self.__dict__["_Rectangle__width"] = value
                 else:
                     self.__dict__["_Rectangle__" + key] = value
         else:
-            for i, item in enumerate(args):
-                self.__dict__[list(self.__dict__.keys())[i]] = item
+            for i, value in enumerate(args):
+                if i == 0:
+                    self.id = value
+                elif i == 1:
+                    self.size = value
+                elif i == 2:
+                    self.x = value
+                elif i == 3:
+                    self.y = value
 
     def __str__(self) -> str:
+
         str_fmt = f"[Square] ({self.id}) {self.x}/{self.y} - "
-        str_fmt = str_fmt + str(self.width)
-        print(self.__dict__)
+        str_fmt = str_fmt + str(self.size)
         return str_fmt
