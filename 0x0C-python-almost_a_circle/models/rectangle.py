@@ -147,26 +147,22 @@ class Rectangle(Base):
 
             print(" " * self.__x + "#" * self.__width)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
 
         """
-        Public instance method: display
-        print Rectangle instance to stdout with #
-        Return: None
+        Public instance method: update
+        update class attribute
+        Return: self
         """
 
-        # if len(args) < 1:
-        #     self.__id = args
-
-        for i, item in enumerate(args):
-            self.__dict__[list(self.__dict__.keys())[i]] = item
-
-        # for i, item in enumerate(args)
-        # self.__id = args[0]
-        # self.__width = args[1]
-        # self.__height = args[2]
-        # self.__x = args[3]
-        # self.__y = args[4]
+        if len(args) == 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.__dict__[key] = value
+                self.__dict__["_Rectangle__" + key] = value
+        else:
+            for i, item in enumerate(args):
+                self.__dict__[list(self.__dict__.keys())[i]] = item
 
     def __str__(self) -> str:
 
