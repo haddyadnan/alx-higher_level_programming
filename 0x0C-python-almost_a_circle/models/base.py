@@ -60,3 +60,12 @@ class Base:
 
         with open(filename, "w") as f:
             num = f.write(t_json)
+
+    @staticmethod
+    def from_json_string(json_string):
+
+        """
+        returns list of json string representation of json_string
+        """
+
+        return json.loads(json_string)
