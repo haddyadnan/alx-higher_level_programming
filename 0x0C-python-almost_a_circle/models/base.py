@@ -110,13 +110,13 @@ class Base:
 
         filename = cls.__name__ + ".csv"
 
-        with open(filename, "w", newline='') as f:
-            
+        with open(filename, "w", newline="") as f:
+
             if list_objs is not None:
                 if cls.__name__ == "Rectangle":
-                    fmt = ['id', 'width', 'height', 'x', 'y']
+                    fmt = ["id", "width", "height", "x", "y"]
                 else:
-                    fmt = ['id', 'size', 'x', 'y']
+                    fmt = ["id", "size", "x", "y"]
 
                 writer = csv.DictWriter(f, fieldnames=fmt)
                 for obj in list_objs:
@@ -124,8 +124,6 @@ class Base:
 
             else:
                 f.write("[]")
-
-        
 
     @classmethod
     def load_from_file_csv(cls):
