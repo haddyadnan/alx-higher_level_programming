@@ -70,3 +70,16 @@ class Base:
         if json_string is None or any(json_string) is False:
             return "[]"
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+
+        """
+        returns instance with all attribute set
+        """
+        if cls.__name__ == "Rectangle":
+            dummy = cls(10, 5)
+        else:
+            dummy = cls(10)
+        dummy.update(**dictionary)
+        return dummy
