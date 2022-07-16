@@ -6,6 +6,7 @@ This module contains the Base class of all other classes in the project
 
 
 import json
+import csv
 
 
 class Base:
@@ -97,5 +98,52 @@ class Base:
             with open(filename, "r") as f:
                 instances = Base.from_json_string(f.read())
                 return [cls.create(**inst) for inst in instances]
+        except IOError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+
+        """
+        serialize in csv to file
+        """
+
+        filename = cls.__name__ + ".csv"
+
+        with open(filename, "w", newline='') as f:
+            
+            if list_objs is not None:
+                if cls.__name__ == "Rectangle":
+                    fmt = ['id', 'width', 'height', 'x', 'y']
+                else:
+                    fmt = ['id', 'size', 'x', 'y']
+
+                writer = csv.DictWriter(f, fieldnames=fmt)
+                for obj in list_objs:
+                    writer.writerow(obj.to_dictionary())
+
+            else:
+                f.write("[]")
+
+        
+
+    @classmethod
+    def load_from_file_csv(cls):
+
+        """
+        Deseriaize from csv
+        """
+
+        filename = cls.__name__ + ".csv"
+
+        try:
+            with open(filename, "r", newline="") as f:
+                if cls.__name__ == "Rectangle":
+                    fmt = ["id", "width", "height", "x", "y"]
+                else:
+                    fmt = ["id", "size", "x", "y"]
+                dreader = csv.DictReader(f, fieldnames=fmt)
+                return [cls.create(**dr) for dr in dreader]
+
         except IOError:
             return []
