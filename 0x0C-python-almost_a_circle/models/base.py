@@ -68,7 +68,7 @@ class Base:
         returns list of json string representation of json_string
         """
         if json_string is None or any(json_string) is False:
-            return "[]"
+            return []
         return json.loads(json_string)
 
     @classmethod
@@ -83,3 +83,19 @@ class Base:
             dummy = cls(10)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+
+        """
+        returns a list of instances
+        """
+
+        filename = cls.__name__ + ".json"
+
+        try:
+            with open(filename, "r") as f:
+                instances = Base.from_json_string(f.read())
+                return [cls.create(**inst) for inst in instances]
+        except IOError:
+            return []
