@@ -67,5 +67,6 @@ class Base:
         """
         returns list of json string representation of json_string
         """
-
+        if json_string is None:
+            return "[]"
         return json.loads(json_string)
