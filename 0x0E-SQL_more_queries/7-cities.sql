@@ -6,12 +6,12 @@
 --         name VARCHAR(256) can’t be null
 CREATE DATABASE IF NOT EXISTS hbtn_0d_usa;
 -- create tables
-CREATE TABLE IF NOT EXISTS hbtn_od_usa.cities
+CREATE TABLE IF NOT EXISTS hbtn_0d_usa.cities
 (
-    id INT UNIQUE AUTOINCREMENT NOT NULL,
+    id INT UNIQUE AUTO_INCREMENT NOT NULL,
     state_id INT NOT NULL,
     name VARCHAR(256) NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY (state_id)
-        REFERENCES hbtn_od_usa.states(id)
+        REFERENCES hbtn_0d_usa.states(id)
 );
