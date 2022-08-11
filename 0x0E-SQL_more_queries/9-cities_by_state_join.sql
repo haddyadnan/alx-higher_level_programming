@@ -2,7 +2,7 @@
 --
 --     Each record should display: cities.id - cities.name - states.name
 --     Results must be sorted in ascending order by cities.id
---     You can use only one
+--     You can use only one select statement
 SELECT cities.id, cities.name, states.name
 FROM states
 INNER JOIN cities
