@@ -4,9 +4,12 @@
 import MySQLdb
 from sys import argv
 
+"""
+Write a script that lists all states from the database hbtn_0e_0_usa
+"""
 
-if __name__ == "__main__":
 
+def main():
     conn = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -32,3 +35,8 @@ if __name__ == "__main__":
         print(row)
     cur.close()
     conn.close()
+
+
+if __name__ == "__main__":
+
+    main()
