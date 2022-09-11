@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+from email import charset
 import MySQLdb
 from sys import argv
 
@@ -9,7 +10,12 @@ Write a script that lists all states from the database hbtn_0e_0_usa:
 
 if __name__ == "__main__":
     db = MySQLdb.connect(
-        host="localhost", user=argv[1], db=argv[3], passwd=argv[2], port=3306
+        host="localhost",
+        port=3306,
+        user=argv[1],
+        passwd=argv[2],
+        db=argv[3],
+        charset="utf8",
     )
     c = db.cursor()
     c.execute(
