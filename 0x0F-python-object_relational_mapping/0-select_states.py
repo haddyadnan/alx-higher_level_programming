@@ -4,9 +4,6 @@
 import MySQLdb
 from sys import argv
 
-"""
-Write a script that lists all states from the database hbtn_0e_0_usa:
-"""
 
 if __name__ == "__main__":
 
