@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from email import charset
+
 import MySQLdb
 from sys import argv
 
@@ -18,11 +18,7 @@ if __name__ == "__main__":
         charset="utf8",
     )
     c = db.cursor()
-    c.execute(
-        """SELECT *
-              FROM states
-              ORDER BY id ASC"""
-    )
+    c.execute("SELECT * FROM states ORDER BY id ASC")
     rows = c.fetchall()
     for row in rows:
         print(row)
