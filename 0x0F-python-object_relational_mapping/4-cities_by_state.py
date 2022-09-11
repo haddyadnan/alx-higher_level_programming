@@ -2,8 +2,7 @@
 
 
 """
-Write a script that lists all states from the database hbtn_0e_0_usa
-where name matches the argument - prevent sql injection
+Write a script that lists all cities from the database hbtn_0e_4_usa
 """
 
 if __name__ == "__main__":
@@ -20,14 +19,12 @@ if __name__ == "__main__":
         charset="utf8",
     )
     c = db.cursor()
-    param = argv[4].split(";")[0]
+
     c.execute(
-        """SELECT *
-                FROM states
-                WHERE name LIKE '{}'
-                ORDER BY id ASC""".format(
-            param
-        )
+        """SELECT cities.name, states.name
+                FROM cities,states
+                WHERE cities.state_id=states.id
+                ORDER BY cities.id ASC"""
     )
     rows = c.fetchall()
     for row in rows:
