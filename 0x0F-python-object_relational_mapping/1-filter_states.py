@@ -5,7 +5,8 @@ import MySQLdb
 from sys import argv
 
 """
-Write a script that lists all states from the database hbtn_0e_0_usa:
+Write a script that lists all states from the database hbtn_0e_0_usa
+With name starting with N
 """
 
 if __name__ == "__main__":
@@ -19,7 +20,12 @@ if __name__ == "__main__":
         charset="utf8",
     )
     c = db.cursor()
-    c.execute("SELECT * FROM states ORDER BY id ASC")
+    c.execute(
+        """SELECT *
+                FROM states
+                WHERE name LIKE 'N%'
+                ORDER BY id ASC"""
+    )
     rows = c.fetchall()
     for row in rows:
         print(row)
