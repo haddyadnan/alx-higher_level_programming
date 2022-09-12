@@ -22,7 +22,7 @@ if __name__ == "__main__":
     c.execute(
         """SELECT *
                 FROM states
-                WHERE name LIKE '{}'
+                WHERE name LIKE BINARY '{}'
                 ORDER BY id ASC""".format(
             argv[4]
         )

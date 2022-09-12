@@ -23,7 +23,7 @@ if __name__ == "__main__":
     c.execute(
         """SELECT *
                 FROM states
-                WHERE name LIKE 'N%' COLLATE utf8_general_ci
+                WHERE name LIKE BINARY 'N%'
                 ORDER BY id ASC"""
     )
     rows = c.fetchall()
