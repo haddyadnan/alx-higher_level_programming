@@ -1,11 +1,14 @@
 #!/usr/bin/python3
-"""
-Start link class to table in database
-"""
-import sys
-from model_state import Base, State
 
+"""
+A script that lists all State objects from the database passed
+"""
+
+import sys
+
+from model_state import Base, State
 from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     engine = create_engine(
@@ -15,3 +18,8 @@ if __name__ == "__main__":
         pool_pre_ping=True,
     )
     Base.metadata.create_all(engine)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    for state in session.query(State).order_by(State.id):
+        print(f"{state.id}: {state.name}")
