@@ -8,6 +8,6 @@ if __name__ == "__main__":
 
     rq = requests.get("https://alx-intranet.hbtn.io/status")
     print(
-        f"Body response:\n\t - type: \
-     {type(rq.text)}\n\t - content: {rq.content}"
+        f"Body response:\n\t - type: {type(rq.text)}\
+        \n\t - content: {rq.content}"
     )
