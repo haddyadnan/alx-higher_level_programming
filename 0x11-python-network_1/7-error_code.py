@@ -13,9 +13,8 @@ if __name__ == "__main__":
     import sys
 
     url = sys.argv[1]
-    try:
-        resp = requests.get(url)
+    resp = requests.get(url)
+    if resp.status_code >= 400:
+        print(f"Error Code {resp.status_code}")
+    else:
         print(resp.text)
-    except HTTPError as e:
-        if e >= 400:
-            print(f"Error Code {e}")

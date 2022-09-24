@@ -9,4 +9,4 @@ if __name__ == "__main__":
     rq = requests.get("https://alx-intranet.hbtn.io/status")
     print("Body response")
     print(f"\t-type: {type(rq.text)}")
-    print(f"\t-content: {rq.content}")
+    print(f"\t-content: {rq.text}")
