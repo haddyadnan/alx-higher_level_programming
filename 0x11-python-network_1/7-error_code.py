@@ -17,4 +17,4 @@ if __name__ == "__main__":
         resp.raise_for_status()
         print(resp.text)
     except Exception:
-        print(f"Error Code: {resp.status_code}")
+        print(f"Error code: {resp.status_code}")
