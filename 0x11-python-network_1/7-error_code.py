@@ -15,8 +15,7 @@ if __name__ == "__main__":
     url = sys.argv[1]
     try:
         resp = requests.get(url)
+        print(resp.text)
     except HTTPError as e:
         if e >= 400:
-            print("Error Code")
-    else:
-        resp.text()
+            print(f"Error Code {e}")

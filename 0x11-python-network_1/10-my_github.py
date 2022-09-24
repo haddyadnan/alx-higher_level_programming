@@ -11,8 +11,8 @@ if __name__ == "__main__":
 
     user = sys.argv[1]
     token = sys.argv[2]
-
-    resp = requests.get("https://api.github.com/user", auth=(user, token)).json()
+    url = "https://api.github.com/user"
+    resp = requests.get(url, auth=(user, token)).json()
     try:
         print(f"{resp['id']}")
     except Exception:
