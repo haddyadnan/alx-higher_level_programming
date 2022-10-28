@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+#!/usr/bin/python3
 
 """
 Write a script that deletes all State objects
@@ -8,11 +9,11 @@ from the database passed
 
 
 import sys
-
-from model_state import Base, State
-from model_city import City
+from unicodedata import name
+from relationship_city import City
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, relationship
+from sqlalchemy.orm import sessionmaker
+from relationship_state import Base, State
 
 if __name__ == "__main__":
     engine = create_engine(
@@ -25,12 +26,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    all_cities = (
-        session.query(City, State)
-        .filter(City.state_id == State.id)
-        .order_by(City.id)
-        .all()
-    )
+    state = State(name="California")
+    city = City(name="San Francisco")
 
-    for city, state in all_cities:
-        print(f"{state.name}: ({city.id}) {city.name}")
+    state.cities.append(city)
+
+    session.add(state)
+    session.commit()
+    session.close()
