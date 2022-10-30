@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
 """
-Write a script that creates the State “California”
-with the City “San Francisco” from the database
+Write a script that lists all City objects
+from the database
 """
 
 
@@ -23,11 +23,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = State(name="California")
-    city = City(name="San Francisco")
+    cities = session.query(City).order_by(City.id).all()
 
-    state.cities.append(city)
+    for city in cities:
+        print(f"{city.id}: {city.name} -> {city.state.name}")
 
-    session.add(state)
-    session.commit()
     session.close()

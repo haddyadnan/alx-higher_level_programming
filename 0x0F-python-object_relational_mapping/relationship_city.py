@@ -4,13 +4,9 @@ A python file that contains
 the class definition of a State and an instance Base :
 """
 
-from sqlalchemy import Column, Integer, String, create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
+from sqlalchemy import Column, Integer, String
 from sqlalchemy import ForeignKey
-from model_state import State, Base
-
-Base = declarative_base()
+from relationship_state import Base
 
 
 class City(Base):
